@@ -1,0 +1,815 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8348c52c23dd343b04011f7d3d4324, type: 3}
+  m_Name: MainDeck
+  m_EditorClassIdentifier: 
+  PointDeck:
+  - Points: 18
+    Cost:
+      brown: 3
+      green: 2
+      red: 0
+      yellow: 0
+  - Points: 10
+    Cost:
+      brown: 0
+      green: 0
+      red: 5
+      yellow: 0
+  - Points: 8
+    Cost:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 2
+  - Points: 17
+    Cost:
+      brown: 2
+      green: 3
+      red: 0
+      yellow: 0
+  - Points: 20
+    Cost:
+      brown: 3
+      green: 1
+      red: 1
+      yellow: 1
+  - Points: 14
+    Cost:
+      brown: 2
+      green: 2
+      red: 0
+      yellow: 0
+  - Points: 14
+    Cost:
+      brown: 3
+      green: 0
+      red: 0
+      yellow: 2
+  - Points: 8
+    Cost:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 2
+  - Points: 9
+    Cost:
+      brown: 1
+      green: 0
+      red: 1
+      yellow: 2
+  - Points: 13
+    Cost:
+      brown: 0
+      green: 2
+      red: 2
+      yellow: 2
+  - Points: 18
+    Cost:
+      brown: 1
+      green: 3
+      red: 1
+      yellow: 1
+  - Points: 10
+    Cost:
+      brown: 0
+      green: 2
+      red: 2
+      yellow: 0
+  - Points: 6
+    Cost:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 2
+  - Points: 15
+    Cost:
+      brown: 2
+      green: 0
+      red: 2
+      yellow: 2
+  - Points: 10
+    Cost:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 2
+  - Points: 20
+    Cost:
+      brown: 5
+      green: 0
+      red: 0
+      yellow: 0
+  - Points: 9
+    Cost:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 3
+  - Points: 16
+    Cost:
+      brown: 3
+      green: 0
+      red: 2
+      yellow: 0
+  - Points: 12
+    Cost:
+      brown: 1
+      green: 1
+      red: 2
+      yellow: 0
+  - Points: 16
+    Cost:
+      brown: 1
+      green: 1
+      red: 3
+      yellow: 1
+  - Points: 14
+    Cost:
+      brown: 2
+      green: 0
+      red: 3
+      yellow: 0
+  - Points: 12
+    Cost:
+      brown: 2
+      green: 0
+      red: 2
+      yellow: 0
+  - Points: 12
+    Cost:
+      brown: 1
+      green: 1
+      red: 1
+      yellow: 1
+  - Points: 16
+    Cost:
+      brown: 4
+      green: 0
+      red: 0
+      yellow: 0
+  - Points: 7
+    Cost:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 3
+  - Points: 11
+    Cost:
+      brown: 0
+      green: 3
+      red: 0
+      yellow: 2
+  - Points: 19
+    Cost:
+      brown: 2
+      green: 2
+      red: 2
+      yellow: 0
+  - Points: 14
+    Cost:
+      brown: 1
+      green: 1
+      red: 1
+      yellow: 3
+  - Points: 17
+    Cost:
+      brown: 2
+      green: 2
+      red: 0
+      yellow: 2
+  - Points: 12
+    Cost:
+      brown: 0
+      green: 2
+      red: 3
+      yellow: 0
+  - Points: 11
+    Cost:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 3
+  - Points: 12
+    Cost:
+      brown: 1
+      green: 2
+      red: 0
+      yellow: 1
+  - Points: 15
+    Cost:
+      brown: 0
+      green: 5
+      red: 0
+      yellow: 0
+  - Points: 13
+    Cost:
+      brown: 0
+      green: 3
+      red: 2
+      yellow: 0
+  - Points: 12
+    Cost:
+      brown: 0
+      green: 4
+      red: 0
+      yellow: 0
+  - Points: 8
+    Cost:
+      brown: 0
+      green: 0
+      red: 4
+      yellow: 0
+  MerchantDeck:
+  - Type: 0
+    Cost:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 2
+      red: 3
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 1
+      green: 0
+      red: 1
+      yellow: 2
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 5
+    Reward:
+      brown: 0
+      green: 3
+      red: 0
+      yellow: 0
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 1
+      red: 1
+      yellow: 1
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 1
+      yellow: 1
+    Reward:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
+    Reward:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 3
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 4
+    Reward:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
+    Reward:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 1
+      green: 0
+      red: 3
+      yellow: 0
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 4
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 0
+    Reward:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 2
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 3
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 3
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 1
+      yellow: 4
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 3
+    Reward:
+      brown: 0
+      green: 1
+      red: 1
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 0
+    Reward:
+      brown: 1
+      green: 1
+      red: 0
+      yellow: 1
+  - Type: 0
+    Cost:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 1
+      yellow: 1
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 3
+    Reward:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 5
+    Reward:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 4
+    Reward:
+      brown: 1
+      green: 1
+      red: 0
+      yellow: 0
+  - Type: 2
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 3
+      green: 3
+      red: 3
+      yellow: 3
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 1
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 3
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 2
+    Reward:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 3
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 2
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 3
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 3
+  - Type: 0
+    Cost:
+      brown: 2
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 3
+      red: 1
+      yellow: 1
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 1
+      yellow: 2
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 3
+    Reward:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+  - Type: 0
+    Cost:
+      brown: 0
+      green: 0
+      red: 1
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 3
+  - Type: 0
+    Cost:
+      brown: 1
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 2
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 1
+      red: 0
+      yellow: 1
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
+  - Type: 2
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 2
+      red: 2
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
+  - Type: 2
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 2
+      red: 2
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
+  - Type: 2
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 2
+      red: 2
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
+  - Type: 2
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 2
+      red: 2
+      yellow: 2
+  - Type: 2
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 2
+      green: 2
+      red: 2
+      yellow: 2
+  - Type: 1
+    Cost:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 0
+    Reward:
+      brown: 0
+      green: 0
+      red: 0
+      yellow: 2
