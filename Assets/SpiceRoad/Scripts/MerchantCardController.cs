@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class MerchantCardController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SpiceInventory Inventory;
 
-    // Update is called once per frame
-    void Update()
+    MerchantCard _card;
+
+    public void InitializeCard(MerchantCard card)
     {
-        
+        Inventory.AddSpice(card);
     }
 }
