@@ -10,4 +10,9 @@ public class SpiceUnit
     public int green;
     public int red;
     public int yellow;
+
+    public override string ToString()
+    {
+        return $"Yellow: {yellow}, Red: {red}, Green: {green}, Brown: {brown}";
+    }
 }

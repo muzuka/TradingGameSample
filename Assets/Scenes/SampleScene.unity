@@ -652,7 +652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -54}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &359543232
@@ -662,6 +662,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 950283967}
     m_Modifications:
+    - target: {fileID: 3851777220231551437, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 4201753605273682209, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
       propertyPath: m_Name
       value: PointCard (3)
@@ -832,6 +836,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 950283967}
     m_Modifications:
+    - target: {fileID: 3851777220231551437, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 4201753605273682209, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
       propertyPath: m_Name
       value: PointCard (1)
@@ -927,6 +935,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4201753605273682210, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
   m_PrefabInstance: {fileID: 377390172}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &451566445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2216625049477942591, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+  m_PrefabInstance: {fileID: 359543232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaacd2ba718c7684786c2e87f057edbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &465275319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1031,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257964740}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1107,6 +1130,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
   m_PrefabInstance: {fileID: 468400730}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &468400732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6084481285354821621, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+  m_PrefabInstance: {fileID: 468400730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d48c54fa30b28b41b6418d58291790a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &473006360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 232820274}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1319,6 +1357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257964740}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1920,7 +1962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -54}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &950283966
@@ -1988,6 +2030,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cards:
   - {fileID: 4201753605124863161}
+  - {fileID: 1653996817}
+  - {fileID: 1615016582}
+  - {fileID: 451566445}
+  - {fileID: 1861156246}
 --- !u!1001 &1028937088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2467,6 +2513,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cards:
   - {fileID: 9051768672384807804}
+  - {fileID: 1909293175}
+  - {fileID: 1459180238}
+  - {fileID: 468400732}
+  - {fileID: 1709818125}
+  - {fileID: 1848266274}
 --- !u!1001 &1294634174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2474,6 +2525,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257964740}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2671,6 +2726,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8186915480618207746, guid: 72fb5b1aec507af4ab9d54a99df208f1, type: 3}
   m_PrefabInstance: {fileID: 1321584472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1459180238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6084481285354821621, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+  m_PrefabInstance: {fileID: 1294634174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d48c54fa30b28b41b6418d58291790a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1467910825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,6 +2851,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 950283967}
     m_Modifications:
+    - target: {fileID: 3851777220231551437, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 4201753605273682209, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
       propertyPath: m_Name
       value: PointCard (2)
@@ -2880,6 +2950,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4201753605273682210, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
   m_PrefabInstance: {fileID: 1615016580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615016582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2216625049477942591, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+  m_PrefabInstance: {fileID: 1615016580}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaacd2ba718c7684786c2e87f057edbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1648617325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2887,6 +2968,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 232820274}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2982,6 +3067,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
   m_PrefabInstance: {fileID: 1648617325}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653996817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2216625049477942591, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+  m_PrefabInstance: {fileID: 377390172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaacd2ba718c7684786c2e87f057edbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1709818125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6084481285354821621, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+  m_PrefabInstance: {fileID: 575494923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d48c54fa30b28b41b6418d58291790a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714551725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,6 +3229,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257964740}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3217,6 +3328,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
   m_PrefabInstance: {fileID: 1848266272}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1848266274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6084481285354821621, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+  m_PrefabInstance: {fileID: 1848266272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d48c54fa30b28b41b6418d58291790a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1861156244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3224,6 +3346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 950283967}
     m_Modifications:
+    - target: {fileID: 3851777220231551437, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 4201753605273682209, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
       propertyPath: m_Name
       value: PointCard (4)
@@ -3319,6 +3445,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4201753605273682210, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
   m_PrefabInstance: {fileID: 1861156244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861156246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2216625049477942591, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+  m_PrefabInstance: {fileID: 1861156244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaacd2ba718c7684786c2e87f057edbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1878263961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,6 +3539,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257964740}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3497,6 +3638,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
   m_PrefabInstance: {fileID: 1909293173}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1909293175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6084481285354821621, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+  m_PrefabInstance: {fileID: 1909293173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d48c54fa30b28b41b6418d58291790a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4201753605124863160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3504,6 +3656,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 950283967}
     m_Modifications:
+    - target: {fileID: 3851777220231551437, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 4201753605273682209, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
       propertyPath: m_Name
       value: PointCard
@@ -3791,6 +3947,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1257964740}
     m_Modifications:
+    - target: {fileID: 5349255234049227371, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: SpiceColors
+      value: 
+      objectReference: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
     - target: {fileID: 9051768672089323261, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

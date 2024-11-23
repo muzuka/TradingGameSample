@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db33a10b8f2d4446854d7e78755439c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpiceColors: {fileID: 11400000, guid: bf89140cdfcc6e241a42d2c245f0180e, type: 2}
   SpiceSlot: {fileID: 7720624951201590195}
-  Arrow: {fileID: 21300000, guid: 0e98821fcd80645469ad03803e1bf9f1, type: 3}
 --- !u!114 &4973249553429123616
 MonoBehaviour:
   m_ObjectHideFlags: 0

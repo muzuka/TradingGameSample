@@ -7,30 +7,24 @@ using Color = UnityEngine.Color;
 
 public class SpiceInventory : MonoBehaviour
 {
+    public ImageData SpiceColors;
     public GameObject SpiceSlot;
-    public Sprite Arrow;
-    
-    Color _yellow = new Color(255, 225, 0);
-    Color _red = new Color(255, 30, 0);
-    Color _green = new Color(105, 211, 0);
-    Color _brown = new Color(148, 74, 45);
-    Color _grey = new Color(211, 191, 185);
 
     public void AddSpice(MerchantCard card)
     {
         if (card.Type == Enums.MerchantType.UPGRADE)
         {
-            AddImage(Arrow);
+            AddImage("Arrow");
 
             for (int i = 0; i < card.Reward.yellow; i++)
             {
-                AddSingle(_grey);
+                AddImage("Grey");
             }
         }
         else if (card.Type == Enums.MerchantType.TRADE)
         {
             AddSpice(card.Cost);
-            AddFlippedImaged(Arrow);
+            AddFlippedImaged("Arrow");
             AddSpice(card.Reward);
         }
         else
@@ -43,44 +37,36 @@ public class SpiceInventory : MonoBehaviour
     {
         for (int i = 0; i < unit.yellow; i++)
         {
-            AddSingle(_yellow);
+            AddImage("Yellow");
         }
         
         for (int i = 0; i < unit.red; i++)
         {
-            AddSingle(_red);
+            AddImage("Red");
         }
         
         for (int i = 0; i < unit.green; i++)
         {
-            AddSingle(_green);
+            AddImage("Green");
         }
         
         for (int i = 0; i < unit.brown; i++)
         {
-            AddSingle(_brown);
+            AddImage("Brown");
         }
     }
 
-    void AddSingle(Color c)
+    void AddImage(string img)
     {
         GameObject obj = Instantiate(SpiceSlot, gameObject.transform);
-        obj.GetComponent<Image>().color = c;
-        Debug.Log($"{obj.name} Changing color to {c}");
+        obj.GetComponent<Image>().sprite = SpiceColors.GetSprite(img);
         obj.SetActive(true);
     }
 
-    void AddImage(Sprite img)
+    void AddFlippedImaged(string img)
     {
         GameObject obj = Instantiate(SpiceSlot, gameObject.transform);
-        obj.GetComponent<Image>().sprite = img;
-        obj.SetActive(true);
-    }
-
-    void AddFlippedImaged(Sprite img)
-    {
-        GameObject obj = Instantiate(SpiceSlot, gameObject.transform);
-        obj.GetComponent<Image>().sprite = img;
+        obj.GetComponent<Image>().sprite = SpiceColors.GetSprite(img);
         obj.transform.Rotate(0f, 0f, 180f);
         obj.SetActive(true);
     }

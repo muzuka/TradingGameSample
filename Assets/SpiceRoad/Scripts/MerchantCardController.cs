@@ -10,6 +10,7 @@ public class MerchantCardController : MonoBehaviour
 
     public void InitializeCard(MerchantCard card)
     {
+        _card = card;
         Inventory.AddSpice(card);
     }
 }
