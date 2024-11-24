@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,6 +10,13 @@ public class SpiceInventory : MonoBehaviour
 {
     public ImageData SpiceColors;
     public GameObject SpiceSlot;
+
+    List<GameObject> _spices;
+
+    void Start()
+    {
+        _spices = new List<GameObject>();
+    }
 
     public void AddSpice(MerchantCard card)
     {
@@ -61,6 +69,7 @@ public class SpiceInventory : MonoBehaviour
         GameObject obj = Instantiate(SpiceSlot, gameObject.transform);
         obj.GetComponent<Image>().sprite = SpiceColors.GetSprite(img);
         obj.SetActive(true);
+        _spices.Add(obj);
     }
 
     void AddFlippedImaged(string img)
@@ -69,15 +78,19 @@ public class SpiceInventory : MonoBehaviour
         obj.GetComponent<Image>().sprite = SpiceColors.GetSprite(img);
         obj.transform.Rotate(0f, 0f, 180f);
         obj.SetActive(true);
+        _spices.Add(obj);
+    }
+
+    public void AddEmpty()
+    {
+        AddImage("Grey");
     }
 
     public void Clear()
     {
-        Image[] imgs = GetComponentsInChildren<Image>();
-
-        for (int i = 0; i < imgs.Length; i++)
+        for (int i = 0; i < _spices.Count; i++)
         {
-            Destroy(imgs[i].gameObject);
+            Destroy(_spices[i]);
         }
     }
 }

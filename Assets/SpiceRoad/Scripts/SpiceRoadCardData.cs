@@ -7,4 +7,6 @@ public class SpiceRoadCardData : ScriptableObject
 {
     public List<PointCard> PointDeck;
     public List<MerchantCard> MerchantDeck;
+
+    public SpiceUnit StartingSpice;
 }

@@ -813,3 +813,8 @@ MonoBehaviour:
       green: 0
       red: 0
       yellow: 2
+  StartingSpice:
+    brown: 0
+    green: 2
+    red: 0
+    yellow: 2

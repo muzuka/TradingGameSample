@@ -11,6 +11,11 @@ public class SpiceUnit
     public int red;
     public int yellow;
 
+    public int totalUnits()
+    {
+        return brown + green + red + yellow;
+    }
+    
     public override string ToString()
     {
         return $"Yellow: {yellow}, Red: {red}, Green: {green}, Brown: {brown}";
