@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 [System.Serializable]
 public class SpiceUnit
 {
-    [FormerlySerializedAs("brown")] public int Brown;
-    [FormerlySerializedAs("green")] public int Green;
-    [FormerlySerializedAs("red")] public int Red;
-    [FormerlySerializedAs("yellow")] public int Yellow;
+    public int Brown;
+    public int Green;
+    public int Red;
+    public int Yellow;
 
     public SpiceUnit(int b, int g, int r, int y)
     {
