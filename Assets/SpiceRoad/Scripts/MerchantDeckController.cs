@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MerchantDeckController : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class MerchantDeckController : MonoBehaviour
 
     List<MerchantCard> _merchantCards;
     List<MerchantCard> _discardPile;
+
+    public delegate void BuyCardDelegate(MerchantCard card);
+    public BuyCardDelegate BuyCard;
     
     // Start is called before the first frame update
     void Start()
@@ -16,8 +21,9 @@ public class MerchantDeckController : MonoBehaviour
         _discardPile = new List<MerchantCard>();
     }
 
-    public void InitializeMerchantDeck(List<MerchantCard> cardList)
+    public void InitializeMerchantDeck(List<MerchantCard> cardList, BuyCardDelegate cardAction)
     {
+        BuyCard += cardAction;
         _merchantCards = cardList;
         _discardPile = new List<MerchantCard>();
         InitializeCards();
@@ -31,7 +37,7 @@ public class MerchantDeckController : MonoBehaviour
         }
     }
 
-    MerchantCard DrawCard()
+    public MerchantCard DrawCard()
     {
         if (_merchantCards == null || _merchantCards.Count == 0)
         {

@@ -18,4 +18,9 @@ public class PointCardController : MonoBehaviour
         PointText.text = card.Points.ToString();
         Debug.Log(_card.Cost.ToString());
     }
+    
+    public PointCard GetCard()
+    {
+        return _card;
+    }
 }

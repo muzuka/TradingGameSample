@@ -11,6 +11,14 @@ public class SpiceUnit
     public int red;
     public int yellow;
 
+    public SpiceUnit(int b, int g, int r, int y)
+    {
+        brown = b;
+        green = g;
+        red = r;
+        yellow = y;
+    }
+    
     public int totalUnits()
     {
         return brown + green + red + yellow;

@@ -13,4 +13,9 @@ public class MerchantCardController : MonoBehaviour
         _card = card;
         Inventory.AddSpice(card);
     }
+
+    public MerchantCard GetCard()
+    {
+        return _card;
+    }
 }

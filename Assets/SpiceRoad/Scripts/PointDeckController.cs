@@ -10,6 +10,9 @@ public class PointDeckController : MonoBehaviour
     List<PointCard> _pointCards;
     List<PointCard> _discardPile;
     
+    public delegate void BuyCardDelegate(PointCard card);
+    public BuyCardDelegate BuyCard;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +20,9 @@ public class PointDeckController : MonoBehaviour
         _discardPile = new List<PointCard>();
     }
     
-    public void InitializePointDeck(List<PointCard> cardList)
+    public void InitializePointDeck(List<PointCard> cardList, BuyCardDelegate cardAction)
     {
+        BuyCard += cardAction;
         _pointCards = cardList;
         _discardPile = new List<PointCard>();
         InitializeCards();
