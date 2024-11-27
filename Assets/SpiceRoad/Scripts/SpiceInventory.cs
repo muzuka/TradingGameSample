@@ -1,11 +1,11 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 using Color = UnityEngine.Color;
 
+/*
+ * UI controller for displaying spice
+ */
 public class SpiceInventory : MonoBehaviour
 {
     public ImageData SpiceColors;
@@ -24,7 +24,7 @@ public class SpiceInventory : MonoBehaviour
         {
             AddImage("Arrow");
 
-            for (int i = 0; i < card.Reward.yellow; i++)
+            for (int i = 0; i < card.Reward.Yellow; i++)
             {
                 AddImage("Grey");
             }
@@ -43,22 +43,22 @@ public class SpiceInventory : MonoBehaviour
     
     public void AddSpice(SpiceUnit unit)
     {
-        for (int i = 0; i < unit.yellow; i++)
+        for (int i = 0; i < unit.Yellow; i++)
         {
             AddImage("Yellow");
         }
         
-        for (int i = 0; i < unit.red; i++)
+        for (int i = 0; i < unit.Red; i++)
         {
             AddImage("Red");
         }
         
-        for (int i = 0; i < unit.green; i++)
+        for (int i = 0; i < unit.Green; i++)
         {
             AddImage("Green");
         }
         
-        for (int i = 0; i < unit.brown; i++)
+        for (int i = 0; i < unit.Brown; i++)
         {
             AddImage("Brown");
         }

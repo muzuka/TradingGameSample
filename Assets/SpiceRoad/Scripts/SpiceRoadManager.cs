@@ -1,10 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
 
+/*
+ * Handles game logic and updating UI
+ */
 public class SpiceRoadManager : MonoBehaviour
 {
     public SpiceRoadCardData GameData;
@@ -13,11 +13,14 @@ public class SpiceRoadManager : MonoBehaviour
     public MerchantDeckController MerchantDeck;
     public PointDeckController PointDeck;
     public HandController Hand;
-    public SpiceInventory PlayerInventory;
+    public SpiceInventory InventoryCard;
     
     [Header("Pop up")]
     
-    const int maxSpice = 10;
+    const int _maxSpice = 10;
+
+    SpiceUnit _playerInventory;
+    MerchantCard _targetCard;
     
     // Start is called before the first frame update
     void Start()
@@ -30,16 +33,17 @@ public class SpiceRoadManager : MonoBehaviour
 
     void InitializeInventory()
     {
-        int leftover = maxSpice - GameData.StartingSpice.totalUnits();
+        int leftover = _maxSpice - GameData.StartingSpice.TotalUnits();
 
         if (leftover < 0)
             return;
         
-        PlayerInventory.AddSpice(GameData.StartingSpice);
+        InventoryCard.AddSpice(GameData.StartingSpice);
+        _playerInventory = GameData.StartingSpice;
 
         for (int i = 0; i < leftover; i++)
         {
-            PlayerInventory.AddEmpty();
+            InventoryCard.AddEmpty();
         }
     }
 
@@ -71,10 +75,17 @@ public class SpiceRoadManager : MonoBehaviour
         switch (card.Type)
         {
             case Enums.MerchantType.TRADE:
+                if (_playerInventory.CanBuy(card.Cost))
+                {
+                    _playerInventory.Trade(card.Cost, card.Reward);
+                }
                 break;
             case Enums.MerchantType.ADD:
+                InventoryCard.AddSpice(card);
                 break;
             case Enums.MerchantType.UPGRADE:
+                _targetCard = card;
+                // TODO: create selection screen
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -83,11 +94,22 @@ public class SpiceRoadManager : MonoBehaviour
 
     void BuyCard(MerchantCard card)
     {
-        
+        _targetCard = card;
+        // TODO: create selection screen
     }
 
     void BuyCard(PointCard card)
     {
         
+    }
+
+    void FinishUpgrade(SpiceUnit unit)
+    {
+        _playerInventory.Upgrade(unit);
+    }
+
+    void FinishBuy(SpiceUnit unit)
+    {
+        _playerInventory.Subtract(unit);
     }
 }
