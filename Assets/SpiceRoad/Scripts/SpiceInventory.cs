@@ -13,7 +13,7 @@ public class SpiceInventory : MonoBehaviour
 
     List<GameObject> _spices;
 
-    void Start()
+    void Awake()
     {
         _spices = new List<GameObject>();
     }
