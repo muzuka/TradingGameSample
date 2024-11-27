@@ -27,6 +27,28 @@ public class SpiceUnit
         Red += unit.Red;
         Yellow += unit.Yellow;
     }
+
+    public void Add(string name, int amount)
+    {
+        switch (name)
+        {
+            case "Brown":
+                Brown += amount;
+                break;
+            case "Green":
+                Green += amount;
+                break;
+            case "Red":
+                Red += amount;
+                break;
+            case "Yellow":
+                Yellow += amount;
+                break;
+            default:
+                Debug.LogWarning("Couldn't add spice: Spice name incorrect");
+                break;
+        }
+    }
     
     public void Subtract(SpiceUnit unit)
     {

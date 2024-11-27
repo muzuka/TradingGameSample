@@ -14,8 +14,10 @@ public class SpiceRoadManager : MonoBehaviour
     public PointDeckController PointDeck;
     public HandController Hand;
     public SpiceInventory InventoryCard;
-    
-    [Header("Pop up")]
+    public Transform PopUpParent;
+
+    [Header("Pop up")] 
+    public SpiceSelection SelectionMenu;
     
     const int _maxSpice = 10;
 
@@ -85,7 +87,8 @@ public class SpiceRoadManager : MonoBehaviour
                 break;
             case Enums.MerchantType.UPGRADE:
                 _targetCard = card;
-                // TODO: create selection screen
+                SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
+                obj.Initialize(_playerInventory, FinishBuy);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -95,7 +98,8 @@ public class SpiceRoadManager : MonoBehaviour
     void BuyCard(MerchantCard card)
     {
         _targetCard = card;
-        // TODO: create selection screen
+        SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
+        obj.Initialize(_playerInventory, FinishUpgrade);
     }
 
     void BuyCard(PointCard card)

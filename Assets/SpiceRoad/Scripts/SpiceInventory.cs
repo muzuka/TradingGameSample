@@ -68,6 +68,7 @@ public class SpiceInventory : MonoBehaviour
     {
         GameObject obj = Instantiate(SpiceSlot, gameObject.transform);
         obj.GetComponent<Image>().sprite = SpiceColors.GetSprite(img);
+        obj.name = img;
         obj.SetActive(true);
         _spices.Add(obj);
     }
@@ -77,6 +78,7 @@ public class SpiceInventory : MonoBehaviour
         GameObject obj = Instantiate(SpiceSlot, gameObject.transform);
         obj.GetComponent<Image>().sprite = SpiceColors.GetSprite(img);
         obj.transform.Rotate(0f, 0f, 180f);
+        obj.name = img;
         obj.SetActive(true);
         _spices.Add(obj);
     }
@@ -92,5 +94,10 @@ public class SpiceInventory : MonoBehaviour
         {
             Destroy(_spices[i]);
         }
+    }
+
+    public List<GameObject> GetSpice()
+    {
+        return _spices;
     }
 }
