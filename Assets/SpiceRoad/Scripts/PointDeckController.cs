@@ -23,7 +23,7 @@ public class PointDeckController : MonoBehaviour
     public void InitializePointDeck(List<PointCard> cardList, BuyCardDelegate cardAction)
     {
         BuyCard += cardAction;
-        _pointCards = cardList;
+        _pointCards = new List<PointCard>(cardList);
         _discardPile = new List<PointCard>();
         InitializeCards();
     }

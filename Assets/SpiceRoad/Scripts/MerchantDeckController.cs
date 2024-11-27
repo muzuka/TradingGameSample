@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,7 +25,7 @@ public class MerchantDeckController : MonoBehaviour
     public void InitializeMerchantDeck(List<MerchantCard> cardList, BuyCardDelegate cardAction)
     {
         BuyCard += cardAction;
-        _merchantCards = cardList;
+        _merchantCards = new List<MerchantCard>(cardList);
         _discardPile = new List<MerchantCard>();
         InitializeCards();
     }
