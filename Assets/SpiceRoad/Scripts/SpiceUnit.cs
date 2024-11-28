@@ -12,6 +12,14 @@ public class SpiceUnit
     public int Red;
     public int Yellow;
 
+    public SpiceUnit()
+    {
+        Brown = 0;
+        Green = 0;
+        Red = 0;
+        Yellow = 0;
+    }
+    
     public SpiceUnit(int b, int g, int r, int y)
     {
         Brown = b;
@@ -60,10 +68,10 @@ public class SpiceUnit
 
     public bool CanBuy(SpiceUnit cost)
     {
-        return (cost.Brown < Brown && 
-                cost.Green < Green && 
-                cost.Red < Red && 
-                cost.Yellow < Yellow);
+        return (cost.Brown <= Brown && 
+                cost.Green <= Green && 
+                cost.Red <= Red && 
+                cost.Yellow <= Yellow);
     }
 
     public void Trade(SpiceUnit cost, SpiceUnit reward)
@@ -77,7 +85,12 @@ public class SpiceUnit
 
     public void Upgrade(SpiceUnit unit)
     {
+        SpiceUnit reward = new SpiceUnit();
+        reward.Add("Red", unit.Yellow);
+        reward.Add("Green", unit.Red);
+        reward.Add("Brown", unit.Green);
         
+        Trade(unit, reward);
     }
 
     public bool IsEqual(SpiceUnit query)
@@ -86,6 +99,14 @@ public class SpiceUnit
                 Green == query.Green &&
                 Red == query.Red &&
                 Yellow == query.Yellow);
+    }
+
+    public void Reset()
+    {
+        Brown = 0;
+        Green = 0;
+        Red = 0;
+        Yellow = 0;
     }
     
     public int TotalUnits()

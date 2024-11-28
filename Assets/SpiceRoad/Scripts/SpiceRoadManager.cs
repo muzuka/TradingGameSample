@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 /*
@@ -15,6 +16,7 @@ public class SpiceRoadManager : MonoBehaviour
     public HandController Hand;
     public SpiceInventory InventoryCard;
     public Transform PopUpParent;
+    public TMP_Text PointsText;
 
     [Header("Pop up")] 
     public SpiceSelection SelectionMenu;
@@ -23,6 +25,7 @@ public class SpiceRoadManager : MonoBehaviour
 
     SpiceUnit _playerInventory;
     MerchantCard _targetCard;
+    int _playerPoints = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -31,18 +34,23 @@ public class SpiceRoadManager : MonoBehaviour
         PointDeck.InitializePointDeck(GameData.PointDeck, BuyCard);
         InitializeInventory();
         InitializeHand();
+        PointsText.text = "Points: " + _playerPoints;
     }
 
     void InitializeInventory()
     {
-        int leftover = _maxSpice - GameData.StartingSpice.TotalUnits();
+        _playerInventory = new SpiceUnit();
+        _playerInventory.Add(GameData.StartingSpice);
+        SetInventory();
+    }
 
-        if (leftover < 0)
-            return;
+    void SetInventory()
+    {
+        int leftover = _maxSpice - _playerInventory.TotalUnits();
         
-        InventoryCard.AddSpice(GameData.StartingSpice);
-        _playerInventory = GameData.StartingSpice;
-
+        InventoryCard.Clear();
+        InventoryCard.AddSpice(_playerInventory);
+        
         for (int i = 0; i < leftover; i++)
         {
             InventoryCard.AddEmpty();
@@ -80,15 +88,17 @@ public class SpiceRoadManager : MonoBehaviour
                 if (_playerInventory.CanBuy(card.Cost))
                 {
                     _playerInventory.Trade(card.Cost, card.Reward);
+                    SetInventory();
                 }
                 break;
             case Enums.MerchantType.ADD:
-                InventoryCard.AddSpice(card);
+                _playerInventory.Add(card.Reward);
+                SetInventory();
                 break;
             case Enums.MerchantType.UPGRADE:
                 _targetCard = card;
                 SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
-                obj.Initialize(_playerInventory, FinishBuy);
+                obj.Initialize(_playerInventory, FinishUpgrade);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -104,16 +114,21 @@ public class SpiceRoadManager : MonoBehaviour
 
     void BuyCard(PointCard card)
     {
-        
+        _playerInventory.Subtract(card.Cost);
+        _playerPoints += card.Points;
+        PointsText.text = "PlayerPoints: " + _playerPoints;
+        SetInventory();
     }
 
     void FinishUpgrade(SpiceUnit unit)
     {
         _playerInventory.Upgrade(unit);
+        SetInventory();
     }
 
     void FinishBuy(SpiceUnit unit)
     {
         _playerInventory.Subtract(unit);
+        SetInventory();
     }
 }

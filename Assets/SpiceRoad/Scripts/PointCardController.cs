@@ -16,7 +16,6 @@ public class PointCardController : MonoBehaviour
         _card = card;
         Inventory.AddSpice(card.Cost);
         PointText.text = card.Points.ToString();
-        Debug.Log(_card.Cost.ToString());
     }
     
     public PointCard GetCard()
