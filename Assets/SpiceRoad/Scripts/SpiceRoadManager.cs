@@ -27,7 +27,6 @@ public class SpiceRoadManager : MonoBehaviour
     MerchantCard _targetCard;
     int _playerPoints = 0;
     
-    // Start is called before the first frame update
     void Start()
     {
         MerchantDeck.InitializeMerchantDeck(GameData.MerchantDeck, BuyCard);
@@ -36,6 +35,8 @@ public class SpiceRoadManager : MonoBehaviour
         InitializeHand();
         PointsText.text = "Points: " + _playerPoints;
     }
+    
+    // Initialization
 
     void InitializeInventory()
     {
@@ -80,6 +81,8 @@ public class SpiceRoadManager : MonoBehaviour
         return hand;
     }
 
+    // User interaction functions
+    
     void PlayCard(MerchantCard card)
     {
         switch (card.Type)
@@ -104,22 +107,39 @@ public class SpiceRoadManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException();
         }
     }
-
-    void BuyCard(MerchantCard card)
+    
+    void BuyCard(MerchantCard card, int cost)
     {
+        MerchantDeck.SetTarget(cost);
         _targetCard = card;
+        
+        if (cost == 0)
+        {
+            FinishBuy(new SpiceUnit());
+            return;
+        }
+        
         SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
-        obj.Initialize(_playerInventory, _targetCard.Cost.Yellow, FinishUpgrade);
+        obj.Initialize(_playerInventory, cost, FinishBuy);
     }
 
     void BuyCard(PointCard card)
     {
+        if (!_playerInventory.CanBuy(card.Cost))
+        {
+            Debug.Log("Cannot buy point card.");
+            return;
+        }
+        
         _playerInventory.Subtract(card.Cost);
         _playerPoints += card.Points;
         PointsText.text = "PlayerPoints: " + _playerPoints;
+        PointDeck.TakeCard(card);
         SetInventory();
     }
 
+    // Called by selection screen
+    
     void FinishUpgrade(SpiceUnit unit)
     {
         _playerInventory.Upgrade(unit);
@@ -129,6 +149,8 @@ public class SpiceRoadManager : MonoBehaviour
     void FinishBuy(SpiceUnit unit)
     {
         _playerInventory.Subtract(unit);
+        MerchantDeck.TakeCard();
+        Hand.AddCard(_targetCard, () => { PlayCard(_targetCard); });
         SetInventory();
     }
 }

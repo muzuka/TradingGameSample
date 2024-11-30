@@ -16,4 +16,9 @@ public class MerchantCard
         Cost = cost;
         Reward = reward;
     }
+
+    public bool IsEqual(MerchantCard card)
+    {
+        return (card.Type == Type) && Cost.IsEqual(card.Cost) && Reward.IsEqual(card.Reward);
+    }
 }

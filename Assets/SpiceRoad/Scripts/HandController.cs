@@ -17,7 +17,6 @@ public class HandController : MonoBehaviour
     public void AddCard(MerchantCard card, UnityAction buttonAction)
     {
         GameObject obj = Instantiate(MerchantCardPrefab, transform);
-        obj.GetComponent<MerchantCardController>().InitializeCard(card);
-        obj.GetComponent<Button>().onClick.AddListener(buttonAction);
+        obj.GetComponent<MerchantCardController>().InitializeCard(card, buttonAction);
     }
 }

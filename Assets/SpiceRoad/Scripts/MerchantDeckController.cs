@@ -1,56 +1,85 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
+/*
+ * Manages merchant card collection
+ * 
+ * Players need to pay for cards passed the leftmost
+ * Replacement cards are added from the rightmost side
+ * 
+ */
 public class MerchantDeckController : MonoBehaviour
 {
     public List<MerchantCardController> Cards;
 
+    int _targetPos;
     List<MerchantCard> _merchantCards;
-    List<MerchantCard> _discardPile;
 
-    public delegate void BuyCardDelegate(MerchantCard card);
+    public delegate void BuyCardDelegate(MerchantCard card, int cost);
     public BuyCardDelegate BuyCard;
     
     // Start is called before the first frame update
     void Start()
     {
         _merchantCards = new List<MerchantCard>();
-        _discardPile = new List<MerchantCard>();
     }
 
     public void InitializeMerchantDeck(List<MerchantCard> cardList, BuyCardDelegate cardAction)
     {
         BuyCard += cardAction;
         _merchantCards = new List<MerchantCard>(cardList);
-        _discardPile = new List<MerchantCard>();
         InitializeCards();
     }
 
     void InitializeCards()
     {
-        foreach (MerchantCardController card in Cards)
+        for (int i = 0; i < Cards.Count; i++)
         {
-            card.InitializeCard(DrawCard());
+            MerchantCard card = DrawCard();
+            int j = i;
+            Cards[i].InitializeCard(card, () => { BuyCard(card, j); });
         }
     }
 
-    public MerchantCard DrawCard()
+    public void TakeCard()
     {
-        if (_merchantCards == null || _merchantCards.Count == 0)
+        if (_targetPos < 0 || _targetPos >= Cards.Count)
         {
-            Debug.LogError("Cannot draw Merchant Card from empty/null deck.");
+            Debug.LogWarning("Warning: Tried taking merchant card outside range.");
+            return;
+        }
+
+        for (int i = _targetPos; i < Cards.Count - 1; i++)
+        {
+            Cards[i].SetCard(Cards[i+1].GetCard());
+        }
+        
+        Cards[^1].SetCard(DrawCard());
+    }
+
+    MerchantCard DrawCard()
+    {
+        if (_merchantCards == null)
+        {
+            Debug.LogError("Error: Null merchant deck");
             return null;
         }
         
-        MerchantCard card = _merchantCards[_merchantCards.Count - 1];
+        if (_merchantCards.Count == 0)
+        {
+            Debug.Log("Ran out of cards!");
+            return null;
+        }
         
-        _discardPile.Add(card);
-        _merchantCards.Remove(card);
+        MerchantCard card = _merchantCards[0];
+        _merchantCards.RemoveAt(0);
 
         return card;
+    }
+
+    public void SetTarget(int value)
+    {
+        _targetPos = value;
     }
 }

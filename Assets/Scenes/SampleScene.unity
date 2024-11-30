@@ -1773,11 +1773,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cards:
-  - {fileID: 4201753605124863161}
-  - {fileID: 1653996817}
-  - {fileID: 1615016582}
-  - {fileID: 451566445}
   - {fileID: 1861156246}
+  - {fileID: 451566445}
+  - {fileID: 1615016582}
+  - {fileID: 1653996817}
+  - {fileID: 4201753605124863161}
 --- !u!224 &1059141018 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4201753605273682210, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
@@ -1848,12 +1848,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cards:
-  - {fileID: 9051768672384807804}
-  - {fileID: 1909293175}
-  - {fileID: 1459180238}
-  - {fileID: 468400732}
-  - {fileID: 1709818125}
   - {fileID: 1848266274}
+  - {fileID: 1709818125}
+  - {fileID: 468400732}
+  - {fileID: 1459180238}
+  - {fileID: 1909293175}
+  - {fileID: 9051768672384807804}
 --- !u!1001 &1294634174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2731,6 +2731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointCard
       objectReference: {fileID: 0}
+    - target: {fileID: 4201753605273682209, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4201753605273682210, guid: 451df5e133381f14c9134bbbb7a5122c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3114,6 +3118,10 @@ PrefabInstance:
     - target: {fileID: 9051768672089323262, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
       propertyPath: m_Name
       value: MerchantCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051768672089323262, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008f5e2eadf6a34428a27f94a55f2d09, type: 3}
