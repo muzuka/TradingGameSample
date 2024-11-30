@@ -98,7 +98,7 @@ public class SpiceRoadManager : MonoBehaviour
             case Enums.MerchantType.UPGRADE:
                 _targetCard = card;
                 SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
-                obj.Initialize(_playerInventory, FinishUpgrade);
+                obj.Initialize(_playerInventory, _targetCard.Cost.Yellow, FinishUpgrade);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -109,7 +109,7 @@ public class SpiceRoadManager : MonoBehaviour
     {
         _targetCard = card;
         SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
-        obj.Initialize(_playerInventory, FinishUpgrade);
+        obj.Initialize(_playerInventory, _targetCard.Cost.Yellow, FinishUpgrade);
     }
 
     void BuyCard(PointCard card)
