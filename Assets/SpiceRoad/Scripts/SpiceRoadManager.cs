@@ -71,7 +71,7 @@ public class SpiceRoadManager : MonoBehaviour
     {
         var hand = new List<MerchantCard>();
         
-        MerchantCard a = new MerchantCard(Enums.MerchantType.ADD, null, 
+        MerchantCard a = new MerchantCard(Enums.MerchantType.ADD, new SpiceUnit(), 
             new SpiceUnit(0, 0, 0, 2));
         MerchantCard b = new MerchantCard(Enums.MerchantType.UPGRADE, 
             new SpiceUnit(0, 0, 0, 2),
@@ -92,11 +92,13 @@ public class SpiceRoadManager : MonoBehaviour
                 {
                     _playerInventory.Trade(card.Cost, card.Reward);
                     SetInventory();
+                    Hand.Discard(card);
                 }
                 break;
             case Enums.MerchantType.ADD:
                 _playerInventory.Add(card.Reward);
                 SetInventory();
+                Hand.Discard(card);
                 break;
             case Enums.MerchantType.UPGRADE:
                 _targetCard = card;
@@ -144,6 +146,7 @@ public class SpiceRoadManager : MonoBehaviour
     {
         _playerInventory.Upgrade(unit);
         SetInventory();
+        Hand.Discard(_targetCard);
     }
 
     void FinishBuy(SpiceUnit unit)

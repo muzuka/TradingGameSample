@@ -18,5 +18,35 @@ public class HandController : MonoBehaviour
     {
         GameObject obj = Instantiate(MerchantCardPrefab, transform);
         obj.GetComponent<MerchantCardController>().InitializeCard(card, buttonAction);
+        Cards.Add(obj.GetComponent<MerchantCardController>());
+    }
+
+    public void Discard(MerchantCard card)
+    {
+        MerchantCardController control = GetCardController(card);
+
+        if (control == null)
+        {
+            Debug.LogWarning("Error: Couldn't find card in hand.");
+            return;
+        }
+        
+        control.Discard();
+    }
+
+    public void Refresh()
+    {
+        Cards.ForEach((x) =>
+        {
+            if (x.isDiscarded())
+            {
+                x.Refresh();
+            }
+        });
+    }
+
+    MerchantCardController GetCardController(MerchantCard card)
+    {
+        return Cards.Find((x) => x.GetCard().IsEqual(card));
     }
 }
