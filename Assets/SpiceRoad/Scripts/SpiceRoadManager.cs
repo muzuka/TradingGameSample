@@ -82,6 +82,11 @@ public class SpiceRoadManager : MonoBehaviour
     }
 
     // User interaction functions
+
+    public void RefreshHand()
+    {
+        Hand.Refresh();
+    }
     
     void PlayCard(MerchantCard card)
     {

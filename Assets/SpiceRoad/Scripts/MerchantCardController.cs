@@ -43,11 +43,13 @@ public class MerchantCardController : MonoBehaviour
     {
         Inventory.Clear();
         _button.interactable = false;
+        _discarded = true;
     }
 
     public void Refresh()
     {
         SetCard(_card);
         _button.interactable = true;
+        _discarded = false;
     }
 }
