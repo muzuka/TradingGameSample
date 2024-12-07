@@ -29,10 +29,12 @@ public class SpiceRoadManager : MonoBehaviour
     
     void Start()
     {
+        InitializeInventory();
+        InitializationCheck();
+        InitializeHand();
+        
         MerchantDeck.InitializeMerchantDeck(GameData.MerchantDeck, BuyCard);
         PointDeck.InitializePointDeck(GameData.PointDeck, BuyCard);
-        InitializeInventory();
-        InitializeHand();
         PointsText.text = "Points: " + _playerPoints;
     }
     
@@ -132,12 +134,6 @@ public class SpiceRoadManager : MonoBehaviour
 
     void BuyCard(PointCard card)
     {
-        if (!_playerInventory.CanBuy(card.Cost))
-        {
-            Debug.Log("Cannot buy point card.");
-            return;
-        }
-        
         _playerInventory.Subtract(card.Cost);
         _playerPoints += card.Points;
         PointsText.text = "PlayerPoints: " + _playerPoints;
@@ -160,5 +156,57 @@ public class SpiceRoadManager : MonoBehaviour
         MerchantDeck.TakeCard();
         Hand.AddCard(_targetCard, () => { PlayCard(_targetCard); });
         SetInventory();
+    }
+
+    void InitializationCheck()
+    {
+        if (GameData == null) { Debug.LogError("Error: Gamedata is null."); }
+        else
+        {
+            if (GameData.PointDeck.Count == 0 || GameData.MerchantDeck.Count == 0)
+            {
+                Debug.LogError("Error: GameData is missing a deck.");
+            }
+        }
+        
+        if (MerchantDeck == null) { Debug.LogError("Error: Merchant Deck is not set."); }
+        else
+        {
+            if (MerchantDeck.Cards == null || MerchantDeck.Cards.Count == 0)
+            {
+                Debug.LogError("Error: Merchant Deck contents are null");
+            }
+        }
+
+        if (PointDeck == null) { Debug.LogError("Error: Points Deck is not set."); }
+        else
+        {
+            if (PointDeck.Cards == null || PointDeck.Cards.Count == 0)
+            {
+                Debug.LogError("Error: Point Deck contents are null");
+            }
+        }
+        
+        if (PointsText == null) { Debug.LogError("Error: Points Text is null."); }
+        if (Hand == null) { Debug.LogError("Error: Hand is null."); }
+        else
+        {
+            if (Hand.MerchantCardPrefab == null)
+            {
+                Debug.LogError("Error: Hand card prefab is null.");
+            }
+        }
+        
+        if (SelectionMenu == null) { Debug.LogError("Error: Selection menu is not set."); }
+        if (InventoryCard == null) { Debug.LogError("Error: Inventory Card is not set."); }
+        else
+        {
+            if (InventoryCard.SpiceColors == null || InventoryCard.SpiceSlot == null)
+            {
+                Debug.LogError("Error: Player inventory is missing data.");
+            }
+        }
+        
+        if (PopUpParent == null) { Debug.LogError("Error: Popup parent is not set."); }
     }
 }
