@@ -20,6 +20,7 @@ public class SpiceRoadManager : MonoBehaviour
 
     [Header("Pop up")] 
     public SpiceSelection SelectionMenu;
+    public MessageDialog DialogMenu;
     
     const int _maxSpice = 10;
 
@@ -127,9 +128,17 @@ public class SpiceRoadManager : MonoBehaviour
             FinishBuy(new SpiceUnit());
             return;
         }
-        
-        SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
-        obj.Initialize(_playerInventory, cost, FinishBuy);
+
+        if (_playerInventory.TotalUnits() >= cost)
+        {
+            SpiceSelection obj = Instantiate(SelectionMenu.gameObject, PopUpParent).GetComponent<SpiceSelection>();
+            obj.Initialize(_playerInventory, cost, FinishBuy);
+        }
+        else
+        {
+            MessageDialog obj = Instantiate(DialogMenu.gameObject, PopUpParent).GetComponent<MessageDialog>();
+            obj.Initialize("You cannot afford that card!");
+        }
     }
 
     void BuyCard(PointCard card)
