@@ -6,9 +6,9 @@ using UnityEngine;
 /*
  * Handles game logic and updating UI
  */
-public class SpiceRoadManager : MonoBehaviour
+public class MarketplaceManager : MonoBehaviour
 {
-    public SpiceRoadCardData GameData;
+    public MarketplaceCardData GameData;
 
     [Header("UI connections")]
     public MerchantDeckController MerchantDeck;
@@ -145,7 +145,7 @@ public class SpiceRoadManager : MonoBehaviour
     {
         _playerInventory.Subtract(card.Cost);
         _playerPoints += card.Points;
-        PointsText.text = "PlayerPoints: " + _playerPoints;
+        PointsText.text = "Points: " + _playerPoints;
         PointDeck.TakeCard(card);
         SetInventory();
     }

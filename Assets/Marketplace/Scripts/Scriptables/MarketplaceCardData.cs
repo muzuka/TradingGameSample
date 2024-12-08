@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SpiceRoadCardData")]
-public class SpiceRoadCardData : ScriptableObject
+public class MarketplaceCardData : ScriptableObject
 {
     public List<PointCard> PointDeck;
     public List<MerchantCard> MerchantDeck;
