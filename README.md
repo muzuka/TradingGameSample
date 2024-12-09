@@ -1,2 +1,2 @@
-# CenturySample
-Sample project building the game Century in Unity
+# TradingGameSample
+Sample project building a board game in Unity
