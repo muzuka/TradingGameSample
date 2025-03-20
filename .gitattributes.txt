@@ -1,0 +1,3 @@
+# Treat .mat and .meta files as text instead of ShaderLab
+*.mat linguist-language=Text
+*.meta linguist-language=Text
